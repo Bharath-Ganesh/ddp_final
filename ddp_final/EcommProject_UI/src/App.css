@@ -1,0 +1,167 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --card-background: #ffffff;
+  --text-color: #2c3e50;
+  --border-color: #bdc3c7;
+}
+
+.App {
+  text-align: left;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin: 10px 0 0;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.api-section {
+  background: var(--card-background);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.api-section h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input {
+  padding: 8px 12px;
+  margin: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+  font-size: 14px;
+  margin-top: 1rem;
+}
+
+label {
+  display: inline-block;
+  margin: 8px 0;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.response-container {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.response-container::before {
+  content: "Response";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: var(--card-background);
+  padding: 0 8px;
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Add some e-commerce themed icons using emoji */
+.api-section h3::before {
+  margin-right: 8px;
+}
+
+.api-section[data-section="cart"] h3::before {
+  content: "🛒";
+}
+
+.api-section[data-section="orders"] h3::before {
+  content: "📦";
+}
+
+.api-section[data-section="recommendations"] h3::before {
+  content: "⭐";
+}
+
+.api-section[data-section="search"] h3::before {
+  content: "🔍";
+}
+
+/* Loading state for buttons */
+button.loading {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+/* Error state styling */
+.error-response {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: #fff5f5;
+}

@@ -1,0 +1,161 @@
+{
+  "mysql_data": {
+    "users": [
+      {
+        "userId": 1,
+        "name": "John Doe",
+        "email": "john@example.com"
+      },
+      {
+        "userId": 2,
+        "name": "Jane Smith",
+        "email": "jane@example.com"
+      }
+    ],
+    "addresses": [
+      {
+        "addressId": "A123",
+        "userId": 1,
+        "street": "123 Main St",
+        "city": "Boston",
+        "state": "MA",
+        "postalCode": "02108",
+        "country": "USA"
+      },
+      {
+        "addressId": "A124",
+        "userId": 2,
+        "street": "456 Park Ave",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10022",
+        "country": "USA"
+      }
+    ],
+    "carts": [
+      {
+        "cartId": 1,
+        "userId": 1,
+        "createdAt": "2024-03-15T10:00:00Z",
+        "updatedAt": "2024-03-15T10:00:00Z"
+      }
+    ],
+    "cartItems": [
+      {
+        "cartId": 1,
+        "productId": "P123",
+        "quantity": 2
+      },
+      {
+        "cartId": 1,
+        "productId": "P124",
+        "quantity": 1
+      }
+    ],
+    "inventory": [
+      {
+        "productId": "P123",
+        "stockQty": 100,
+        "reservedQty": 5
+      },
+      {
+        "productId": "P124",
+        "stockQty": 50,
+        "reservedQty": 2
+      }
+    ]
+  },
+  "mongodb_data": {
+    "products": [
+      {
+        "productId": "P123",
+        "name": "Gaming Laptop",
+        "description": "High-performance gaming laptop",
+        "price": 1299.99,
+        "category": "electronics",
+        "attributes": {
+          "brand": "TechPro",
+          "processor": "Intel i7",
+          "ram": "16GB",
+          "storage": "1TB SSD"
+        }
+      },
+      {
+        "productId": "P124",
+        "name": "Wireless Headphones",
+        "description": "Premium wireless headphones",
+        "price": 199.99,
+        "category": "electronics",
+        "attributes": {
+          "brand": "AudioMax",
+          "type": "Over-ear",
+          "batteryLife": "30 hours",
+          "connectivity": "Bluetooth 5.0"
+        }
+      }
+    ],
+    "orders": [
+      {
+        "orderId": "O20240315123456",
+        "userId": 1,
+        "addressId": "A123",
+        "items": [
+          {
+            "productId": "P123",
+            "quantity": 1,
+            "priceAtSale": 1299.99
+          }
+        ],
+        "totalAmount": 1299.99,
+        "orderDate": "2024-03-15T12:34:56Z",
+        "paymentStatus": "PAID",
+        "statusHistory": [
+          {
+            "status": "PLACED",
+            "at": "2024-03-15T12:34:56Z"
+          },
+          {
+            "status": "CONFIRMED",
+            "at": "2024-03-15T12:35:00Z"
+          }
+        ]
+      }
+    ],
+    "productreviews": [
+      {
+        "reviewId": "R20240315123456",
+        "userId": 2,
+        "productId": "P123",
+        "rating": 5,
+        "comment": "Amazing laptop! Great for gaming and work.",
+        "createdAt": "2024-03-15T12:34:56Z"
+      }
+    ],
+    "searchhistory": [
+      {
+        "userId": 1,
+        "terms": "gaming laptop",
+        "filters": {
+          "category": "electronics",
+          "price": {
+            "min": 1000,
+            "max": 2000
+          }
+        },
+        "searchedAt": "2024-03-15T10:30:00Z"
+      }
+    ],
+    "recommendations": [
+      {
+        "userId": 1,
+        "candidates": [
+          {
+            "productId": "P124",
+            "score": 0.85
+          }
+        ],
+        "generatedAt": "2024-03-15T12:00:00Z"
+      }
+    ]
+  }
+}

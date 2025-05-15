@@ -1,0 +1,228 @@
+{
+  "info": {
+    "_postman_id": "e8f3d2a1-6b5c-4f7d-9c8e-1d2b3a4c5e6f",
+    "name": "E-commerce Hybrid DB API",
+    "description": "API collection for hybrid MySQL-MongoDB e-commerce system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cart Operations",
+      "item": [
+        {
+          "name": "Show Cart Items",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/cart/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "cart", "1"]
+            },
+            "description": "Get all items in a user's cart with product details"
+          }
+        },
+        {
+          "name": "Add to Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"productId\": \"P123\",\n    \"quantity\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/cart/add",
+              "host": ["{{base_url}}"],
+              "path": ["api", "cart", "add"]
+            },
+            "description": "Add an item to user's cart"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Order Operations",
+      "item": [
+        {
+          "name": "Get Order History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/orders/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "orders", "1"]
+            },
+            "description": "Get order history for a user"
+          }
+        },
+        {
+          "name": "Place Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"addressId\": \"A123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/orders/place",
+              "host": ["{{base_url}}"],
+              "path": ["api", "orders", "place"]
+            },
+            "description": "Place a new order"
+          }
+        },
+        {
+          "name": "Check Order Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/orders/O20240315123456/status",
+              "host": ["{{base_url}}"],
+              "path": ["api", "orders", "O20240315123456", "status"]
+            },
+            "description": "Check the status of an order"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Product Operations",
+      "item": [
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/search?query=laptop&category=electronics&minPrice=500&maxPrice=2000",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "search"],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "laptop"
+                },
+                {
+                  "key": "category",
+                  "value": "electronics"
+                },
+                {
+                  "key": "minPrice",
+                  "value": "500"
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "2000"
+                }
+              ]
+            },
+            "description": "Search products with filters"
+          }
+        },
+        {
+          "name": "Get Recommendations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/recommendations/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "recommendations", "1"]
+            },
+            "description": "Get product recommendations for a user"
+          }
+        },
+        {
+          "name": "Check Inventory",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/P123/inventory",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "P123", "inventory"]
+            },
+            "description": "Check product inventory status"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Review Operations",
+      "item": [
+        {
+          "name": "Write Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"productId\": \"P123\",\n    \"rating\": 5,\n    \"comment\": \"Excellent product! Very satisfied with the quality.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/P123/reviews",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "P123", "reviews"]
+            },
+            "description": "Write a product review"
+          }
+        },
+        {
+          "name": "Get Product Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/P123/reviews",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "P123", "reviews"]
+            },
+            "description": "Get all reviews for a product"
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ]
+}
