@@ -211,5 +211,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For any queries regarding the project, please reach out to:
 
-- Bharath Ganesh - [Add contact information]
-- [Add other team members' contact information]
+- Bharath Ganesh
